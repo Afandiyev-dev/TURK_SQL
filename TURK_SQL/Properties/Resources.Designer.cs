@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TURK_SQL.Properties {
+namespace Summativ_SQL.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace TURK_SQL.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("TURK_SQL.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Summativ_SQL.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -63,50 +63,9 @@ namespace TURK_SQL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _0IHvjO {
+        internal static System.Drawing.Bitmap analytics {
             get {
-                object obj = ResourceManager.GetObject("0IHvjO", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap board_black_line_texture_background_wood_55220_2560x1600 {
-            get {
-                object obj = ResourceManager.GetObject("board_black_line_texture_background_wood_55220_2560x1600", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap giphy {
-            get {
-                object obj = ResourceManager.GetObject("giphy", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap kisspng_blackboard_desktop_wallpaper_presentation_classroo_teacher_5ad5d5eac111a7_3333765315239633707908 {
-            get {
-                object obj = ResourceManager.GetObject("kisspng-blackboard-desktop-wallpaper-presentation-classroo-teacher-5ad5d5eac111a7" +
-                        ".3333765315239633707908", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pexels_photo_949587 {
-            get {
-                object obj = ResourceManager.GetObject("pexels-photo-949587", resourceCulture);
+                object obj = ResourceManager.GetObject("analytics", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

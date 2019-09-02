@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TURK_SQL.Properties {
+namespace Summativ_SQL.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -26,11 +26,22 @@ namespace TURK_SQL.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=AUTO-TAHIR\\NETX_SERVER_SQL;Initial Catalog=Test;Integrated Security=T" +
-            "rue")]
-        public string TestConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=AUTO-TAHIR\\\\NETX_SERVER_SQL;Initial Catalog=Test;Integrated Security=" +
+            "True")]
+        public string TestConnectionString1 {
             get {
-                return ((string)(this["TestConnectionString"]));
+                return ((string)(this["TestConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Test.mdf;Inte" +
+            "grated Security=True")]
+        public string Database1ConnectionString {
+            get {
+                return ((string)(this["Database1ConnectionString"]));
             }
         }
     }

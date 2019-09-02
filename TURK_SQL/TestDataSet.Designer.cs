@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace TURK_SQL {
+namespace Summativ_SQL {
     
     
     /// <summary>
@@ -279,7 +279,7 @@ namespace TURK_SQL {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class SchoolDataTable : global::System.Data.TypedTableBase<SchoolRow> {
             
-            private global::System.Data.DataColumn columnID;
+            private global::System.Data.DataColumn columnId;
             
             private global::System.Data.DataColumn columnName;
             
@@ -334,9 +334,9 @@ namespace TURK_SQL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn IDColumn {
+            public global::System.Data.DataColumn IdColumn {
                 get {
-                    return this.columnID;
+                    return this.columnId;
                 }
             }
             
@@ -449,10 +449,10 @@ namespace TURK_SQL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SchoolRow AddSchoolRow(string Name, string Surname, string Estimate, string BAL, int KSQ1, int KSQ2, int KSQ3, int KSQ4, int BKSQ) {
+            public SchoolRow AddSchoolRow(System.Guid Id, string Name, string Surname, string Estimate, string BAL, int KSQ1, int KSQ2, int KSQ3, int KSQ4, int BKSQ) {
                 SchoolRow rowSchoolRow = ((SchoolRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
+                        Id,
                         Name,
                         Surname,
                         Estimate,
@@ -469,9 +469,9 @@ namespace TURK_SQL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SchoolRow FindByID(int ID) {
+            public SchoolRow FindById(System.Guid Id) {
                 return ((SchoolRow)(this.Rows.Find(new object[] {
-                            ID})));
+                            Id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -491,7 +491,7 @@ namespace TURK_SQL {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnID = base.Columns["ID"];
+                this.columnId = base.Columns["Id"];
                 this.columnName = base.Columns["Name"];
                 this.columnSurname = base.Columns["Surname"];
                 this.columnEstimate = base.Columns["Estimate"];
@@ -506,8 +506,8 @@ namespace TURK_SQL {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID);
+                this.columnId = new global::System.Data.DataColumn("Id", typeof(global::System.Guid), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnId);
                 this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName);
                 this.columnSurname = new global::System.Data.DataColumn("Surname", typeof(string), null, global::System.Data.MappingType.Element);
@@ -527,13 +527,9 @@ namespace TURK_SQL {
                 this.columnBKSQ = new global::System.Data.DataColumn("BKSQ", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBKSQ);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnID}, true));
-                this.columnID.AutoIncrement = true;
-                this.columnID.AutoIncrementSeed = -1;
-                this.columnID.AutoIncrementStep = -1;
-                this.columnID.AllowDBNull = false;
-                this.columnID.ReadOnly = true;
-                this.columnID.Unique = true;
+                                this.columnId}, true));
+                this.columnId.AllowDBNull = false;
+                this.columnId.Unique = true;
                 this.columnName.AllowDBNull = false;
                 this.columnName.MaxLength = 50;
                 this.columnSurname.AllowDBNull = false;
@@ -686,12 +682,12 @@ namespace TURK_SQL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int ID {
+            public System.Guid Id {
                 get {
-                    return ((int)(this[this.tableSchool.IDColumn]));
+                    return ((global::System.Guid)(this[this.tableSchool.IdColumn]));
                 }
                 set {
-                    this[this.tableSchool.IDColumn] = value;
+                    this[this.tableSchool.IdColumn] = value;
                 }
             }
             
@@ -881,7 +877,7 @@ namespace TURK_SQL {
         }
     }
 }
-namespace TURK_SQL.TestDataSetTableAdapters {
+namespace Summativ_SQL.TestDataSetTableAdapters {
     
     
     /// <summary>
@@ -1005,7 +1001,7 @@ namespace TURK_SQL.TestDataSetTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "School";
-            tableMapping.ColumnMappings.Add("ID", "ID");
+            tableMapping.ColumnMappings.Add("Id", "Id");
             tableMapping.ColumnMappings.Add("Name", "Name");
             tableMapping.ColumnMappings.Add("Surname", "Surname");
             tableMapping.ColumnMappings.Add("Estimate", "Estimate");
@@ -1018,9 +1014,9 @@ namespace TURK_SQL.TestDataSetTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[School] WHERE (([ID] = @Original_ID) AND ([Name] = @Original_Name) AND ([Surname] = @Original_Surname) AND ([Estimate] = @Original_Estimate) AND ([BAL] = @Original_BAL) AND ([KSQ1] = @Original_KSQ1) AND ([KSQ2] = @Original_KSQ2) AND ((@IsNull_KSQ3 = 1 AND [KSQ3] IS NULL) OR ([KSQ3] = @Original_KSQ3)) AND ((@IsNull_KSQ4 = 1 AND [KSQ4] IS NULL) OR ([KSQ4] = @Original_KSQ4)) AND ((@IsNull_BKSQ = 1 AND [BKSQ] IS NULL) OR ([BKSQ] = @Original_BKSQ)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[School] WHERE (([Id] = @Original_Id) AND ([Name] = @Original_Name) AND ([Surname] = @Original_Surname) AND ([Estimate] = @Original_Estimate) AND ([BAL] = @Original_BAL) AND ([KSQ1] = @Original_KSQ1) AND ([KSQ2] = @Original_KSQ2) AND ((@IsNull_KSQ3 = 1 AND [KSQ3] IS NULL) OR ([KSQ3] = @Original_KSQ3)) AND ((@IsNull_KSQ4 = 1 AND [KSQ4] IS NULL) OR ([KSQ4] = @Original_KSQ4)) AND ((@IsNull_BKSQ = 1 AND [BKSQ] IS NULL) OR ([BKSQ] = @Original_BKSQ)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Surname", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Surname", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Estimate", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Estimate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -1035,9 +1031,10 @@ namespace TURK_SQL.TestDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BKSQ", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BKSQ", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[School] ([Name], [Surname], [Estimate], [BAL], [KSQ1], [KSQ2], [KSQ3], [KSQ4], [BKSQ]) VALUES (@Name, @Surname, @Estimate, @BAL, @KSQ1, @KSQ2, @KSQ3, @KSQ4, @BKSQ);
-SELECT ID, Name, Surname, Estimate, BAL, KSQ1, KSQ2, KSQ3, KSQ4, BKSQ FROM School WHERE (ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[School] ([Id], [Name], [Surname], [Estimate], [BAL], [KSQ1], [KSQ2], [KSQ3], [KSQ4], [BKSQ]) VALUES (@Id, @Name, @Surname, @Estimate, @BAL, @KSQ1, @KSQ2, @KSQ3, @KSQ4, @BKSQ);
+SELECT Id, Name, Surname, Estimate, BAL, KSQ1, KSQ2, KSQ3, KSQ4, BKSQ FROM School WHERE (Id = @Id)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Surname", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Surname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Estimate", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Estimate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1049,9 +1046,10 @@ SELECT ID, Name, Surname, Estimate, BAL, KSQ1, KSQ2, KSQ3, KSQ4, BKSQ FROM Schoo
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BKSQ", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BKSQ", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[School] SET [Name] = @Name, [Surname] = @Surname, [Estimate] = @Estimate, [BAL] = @BAL, [KSQ1] = @KSQ1, [KSQ2] = @KSQ2, [KSQ3] = @KSQ3, [KSQ4] = @KSQ4, [BKSQ] = @BKSQ WHERE (([ID] = @Original_ID) AND ([Name] = @Original_Name) AND ([Surname] = @Original_Surname) AND ([Estimate] = @Original_Estimate) AND ([BAL] = @Original_BAL) AND ([KSQ1] = @Original_KSQ1) AND ([KSQ2] = @Original_KSQ2) AND ((@IsNull_KSQ3 = 1 AND [KSQ3] IS NULL) OR ([KSQ3] = @Original_KSQ3)) AND ((@IsNull_KSQ4 = 1 AND [KSQ4] IS NULL) OR ([KSQ4] = @Original_KSQ4)) AND ((@IsNull_BKSQ = 1 AND [BKSQ] IS NULL) OR ([BKSQ] = @Original_BKSQ)));
-SELECT ID, Name, Surname, Estimate, BAL, KSQ1, KSQ2, KSQ3, KSQ4, BKSQ FROM School WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[School] SET [Id] = @Id, [Name] = @Name, [Surname] = @Surname, [Estimate] = @Estimate, [BAL] = @BAL, [KSQ1] = @KSQ1, [KSQ2] = @KSQ2, [KSQ3] = @KSQ3, [KSQ4] = @KSQ4, [BKSQ] = @BKSQ WHERE (([Id] = @Original_Id) AND ([Name] = @Original_Name) AND ([Surname] = @Original_Surname) AND ([Estimate] = @Original_Estimate) AND ([BAL] = @Original_BAL) AND ([KSQ1] = @Original_KSQ1) AND ([KSQ2] = @Original_KSQ2) AND ((@IsNull_KSQ3 = 1 AND [KSQ3] IS NULL) OR ([KSQ3] = @Original_KSQ3)) AND ((@IsNull_KSQ4 = 1 AND [KSQ4] IS NULL) OR ([KSQ4] = @Original_KSQ4)) AND ((@IsNull_BKSQ = 1 AND [BKSQ] IS NULL) OR ([BKSQ] = @Original_BKSQ)));
+SELECT Id, Name, Surname, Estimate, BAL, KSQ1, KSQ2, KSQ3, KSQ4, BKSQ FROM School WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Surname", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Surname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Estimate", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Estimate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1061,7 +1059,7 @@ SELECT ID, Name, Surname, Estimate, BAL, KSQ1, KSQ2, KSQ3, KSQ4, BKSQ FROM Schoo
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@KSQ3", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KSQ3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@KSQ4", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KSQ4", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BKSQ", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BKSQ", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.UniqueIdentifier, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Surname", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Surname", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Estimate", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Estimate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -1074,14 +1072,13 @@ SELECT ID, Name, Surname, Estimate, BAL, KSQ1, KSQ2, KSQ3, KSQ4, BKSQ FROM Schoo
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_KSQ4", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KSQ4", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_BKSQ", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BKSQ", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BKSQ", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BKSQ", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::TURK_SQL.Properties.Settings.Default.TestConnectionString;
+            this._connection.ConnectionString = global::Summativ_SQL.Properties.Settings.Default.Database1ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1090,7 +1087,7 @@ SELECT ID, Name, Surname, Estimate, BAL, KSQ1, KSQ2, KSQ3, KSQ4, BKSQ FROM Schoo
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, Name, Surname, Estimate, BAL, KSQ1, KSQ2, KSQ3, KSQ4, BKSQ FROM dbo.Sc" +
+            this._commandCollection[0].CommandText = "SELECT Id, Name, Surname, Estimate, BAL, KSQ1, KSQ2, KSQ3, KSQ4, BKSQ FROM dbo.Sc" +
                 "hool";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
@@ -1152,8 +1149,8 @@ SELECT ID, Name, Surname, Estimate, BAL, KSQ1, KSQ2, KSQ3, KSQ4, BKSQ FROM Schoo
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID, string Original_Name, string Original_Surname, string Original_Estimate, string Original_BAL, int Original_KSQ1, int Original_KSQ2, global::System.Nullable<int> Original_KSQ3, global::System.Nullable<int> Original_KSQ4, global::System.Nullable<int> Original_BKSQ) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
+        public virtual int Delete(System.Guid Original_Id, string Original_Name, string Original_Surname, string Original_Estimate, string Original_BAL, int Original_KSQ1, int Original_KSQ2, global::System.Nullable<int> Original_KSQ3, global::System.Nullable<int> Original_KSQ4, global::System.Nullable<int> Original_BKSQ) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((System.Guid)(Original_Id));
             if ((Original_Name == null)) {
                 throw new global::System.ArgumentNullException("Original_Name");
             }
@@ -1224,50 +1221,51 @@ SELECT ID, Name, Surname, Estimate, BAL, KSQ1, KSQ2, KSQ3, KSQ4, BKSQ FROM Schoo
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Name, string Surname, string Estimate, string BAL, int KSQ1, int KSQ2, global::System.Nullable<int> KSQ3, global::System.Nullable<int> KSQ4, global::System.Nullable<int> BKSQ) {
+        public virtual int Insert(System.Guid Id, string Name, string Surname, string Estimate, string BAL, int KSQ1, int KSQ2, global::System.Nullable<int> KSQ3, global::System.Nullable<int> KSQ4, global::System.Nullable<int> BKSQ) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((System.Guid)(Id));
             if ((Name == null)) {
                 throw new global::System.ArgumentNullException("Name");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Name));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Name));
             }
             if ((Surname == null)) {
                 throw new global::System.ArgumentNullException("Surname");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Surname));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Surname));
             }
             if ((Estimate == null)) {
                 throw new global::System.ArgumentNullException("Estimate");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Estimate));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Estimate));
             }
             if ((BAL == null)) {
                 throw new global::System.ArgumentNullException("BAL");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(BAL));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(BAL));
             }
-            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(KSQ1));
-            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(KSQ2));
+            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(KSQ1));
+            this.Adapter.InsertCommand.Parameters[6].Value = ((int)(KSQ2));
             if ((KSQ3.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((int)(KSQ3.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((KSQ4.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((int)(KSQ4.Value));
+                this.Adapter.InsertCommand.Parameters[7].Value = ((int)(KSQ3.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((BKSQ.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((int)(BKSQ.Value));
+            if ((KSQ4.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((int)(KSQ4.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((BKSQ.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((int)(BKSQ.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1290,6 +1288,7 @@ SELECT ID, Name, Surname, Estimate, BAL, KSQ1, KSQ2, KSQ3, KSQ4, BKSQ FROM Schoo
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
+                    System.Guid Id, 
                     string Name, 
                     string Surname, 
                     string Estimate, 
@@ -1299,7 +1298,7 @@ SELECT ID, Name, Surname, Estimate, BAL, KSQ1, KSQ2, KSQ3, KSQ4, BKSQ FROM Schoo
                     global::System.Nullable<int> KSQ3, 
                     global::System.Nullable<int> KSQ4, 
                     global::System.Nullable<int> BKSQ, 
-                    int Original_ID, 
+                    System.Guid Original_Id, 
                     string Original_Name, 
                     string Original_Surname, 
                     string Original_Estimate, 
@@ -1308,104 +1307,103 @@ SELECT ID, Name, Surname, Estimate, BAL, KSQ1, KSQ2, KSQ3, KSQ4, BKSQ FROM Schoo
                     int Original_KSQ2, 
                     global::System.Nullable<int> Original_KSQ3, 
                     global::System.Nullable<int> Original_KSQ4, 
-                    global::System.Nullable<int> Original_BKSQ, 
-                    int ID) {
+                    global::System.Nullable<int> Original_BKSQ) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((System.Guid)(Id));
             if ((Name == null)) {
                 throw new global::System.ArgumentNullException("Name");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Name));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Name));
             }
             if ((Surname == null)) {
                 throw new global::System.ArgumentNullException("Surname");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Surname));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Surname));
             }
             if ((Estimate == null)) {
                 throw new global::System.ArgumentNullException("Estimate");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Estimate));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Estimate));
             }
             if ((BAL == null)) {
                 throw new global::System.ArgumentNullException("BAL");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(BAL));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(BAL));
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(KSQ1));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(KSQ2));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(KSQ1));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(KSQ2));
             if ((KSQ3.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(KSQ3.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((KSQ4.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(KSQ4.Value));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(KSQ3.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((BKSQ.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(BKSQ.Value));
+            if ((KSQ4.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(KSQ4.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_ID));
+            if ((BKSQ.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(BKSQ.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((System.Guid)(Original_Id));
             if ((Original_Name == null)) {
                 throw new global::System.ArgumentNullException("Original_Name");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_Name));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Name));
             }
             if ((Original_Surname == null)) {
                 throw new global::System.ArgumentNullException("Original_Surname");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Surname));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Surname));
             }
             if ((Original_Estimate == null)) {
                 throw new global::System.ArgumentNullException("Original_Estimate");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Estimate));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_Estimate));
             }
             if ((Original_BAL == null)) {
                 throw new global::System.ArgumentNullException("Original_BAL");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_BAL));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_BAL));
             }
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_KSQ1));
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_KSQ2));
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_KSQ1));
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_KSQ2));
             if ((Original_KSQ3.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_KSQ3.Value));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_KSQ3.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             if ((Original_KSQ4.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Original_KSQ4.Value));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(Original_KSQ4.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             if ((Original_BKSQ.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(Original_BKSQ.Value));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(Original_BKSQ.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1436,7 +1434,7 @@ SELECT ID, Name, Surname, Estimate, BAL, KSQ1, KSQ2, KSQ3, KSQ4, BKSQ FROM Schoo
                     global::System.Nullable<int> KSQ3, 
                     global::System.Nullable<int> KSQ4, 
                     global::System.Nullable<int> BKSQ, 
-                    int Original_ID, 
+                    System.Guid Original_Id, 
                     string Original_Name, 
                     string Original_Surname, 
                     string Original_Estimate, 
@@ -1446,7 +1444,7 @@ SELECT ID, Name, Surname, Estimate, BAL, KSQ1, KSQ2, KSQ3, KSQ4, BKSQ FROM Schoo
                     global::System.Nullable<int> Original_KSQ3, 
                     global::System.Nullable<int> Original_KSQ4, 
                     global::System.Nullable<int> Original_BKSQ) {
-            return this.Update(Name, Surname, Estimate, BAL, KSQ1, KSQ2, KSQ3, KSQ4, BKSQ, Original_ID, Original_Name, Original_Surname, Original_Estimate, Original_BAL, Original_KSQ1, Original_KSQ2, Original_KSQ3, Original_KSQ4, Original_BKSQ, Original_ID);
+            return this.Update(Original_Id, Name, Surname, Estimate, BAL, KSQ1, KSQ2, KSQ3, KSQ4, BKSQ, Original_Id, Original_Name, Original_Surname, Original_Estimate, Original_BAL, Original_KSQ1, Original_KSQ2, Original_KSQ3, Original_KSQ4, Original_BKSQ);
         }
     }
     

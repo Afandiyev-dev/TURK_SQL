@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button_reset = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -49,39 +50,43 @@
             this.textBox_surname = new System.Windows.Forms.TextBox();
             this.textBox_name = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estimateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.KSQ1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.KSQ2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.KSQ3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.KSQ4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BKSQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.schoolBindingSource6 = new System.Windows.Forms.BindingSource(this.components);
+            this.testDataSet1 = new Summativ_SQL.TestDataSet();
+            this.schoolBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
+            this.testDataSet = new Summativ_SQL.TestDataSet();
+            this.schoolBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.schoolBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.testDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.testDataSet = new TURK_SQL.TestDataSet();
-            this.schoolBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.testDataSet3 = new TURK_SQL.TestDataSet3();
-            this.schoolBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.testDataSet1 = new TURK_SQL.TestDataSet1();
-            this.schoolTableAdapter = new TURK_SQL.TestDataSet1TableAdapters.SchoolTableAdapter();
-            this.schoolTableAdapter1 = new TURK_SQL.TestDataSet3TableAdapters.SchoolTableAdapter();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.schoolBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.schoolTableAdapter2 = new TURK_SQL.TestDataSetTableAdapters.SchoolTableAdapter();
+            this.button_Calculator = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.schoolBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.schoolBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.schoolTableAdapter = new Summativ_SQL.TestDataSetTableAdapters.SchoolTableAdapter();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.schoolBindingSource6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.schoolBindingSource5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.schoolBindingSource4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.schoolBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.schoolBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testDataSet3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.schoolBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.schoolBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.schoolBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.schoolBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -113,12 +118,13 @@
             // 
             // button_reset
             // 
+            this.button_reset.BackColor = System.Drawing.Color.LightSalmon;
             this.button_reset.Location = new System.Drawing.Point(291, 162);
             this.button_reset.Name = "button_reset";
             this.button_reset.Size = new System.Drawing.Size(44, 23);
             this.button_reset.TabIndex = 18;
             this.button_reset.Text = "Reset";
-            this.button_reset.UseVisualStyleBackColor = true;
+            this.button_reset.UseVisualStyleBackColor = false;
             this.button_reset.Click += new System.EventHandler(this.Button_reset_Click);
             // 
             // label8
@@ -218,6 +224,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(124, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
@@ -226,12 +234,14 @@
             // 
             // button_delete
             // 
+            this.button_delete.BackColor = System.Drawing.Color.LightCoral;
+            this.button_delete.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button_delete.Location = new System.Drawing.Point(28, 158);
             this.button_delete.Name = "button_delete";
             this.button_delete.Size = new System.Drawing.Size(75, 27);
             this.button_delete.TabIndex = 5;
             this.button_delete.Text = "Delete";
-            this.button_delete.UseVisualStyleBackColor = true;
+            this.button_delete.UseVisualStyleBackColor = false;
             this.button_delete.Click += new System.EventHandler(this.Button_delete_Click);
             // 
             // button_update
@@ -246,12 +256,13 @@
             // 
             // button_insert
             // 
+            this.button_insert.BackColor = System.Drawing.Color.Lime;
             this.button_insert.Location = new System.Drawing.Point(28, 100);
             this.button_insert.Name = "button_insert";
             this.button_insert.Size = new System.Drawing.Size(75, 27);
             this.button_insert.TabIndex = 3;
             this.button_insert.Text = "Insert";
-            this.button_insert.UseVisualStyleBackColor = true;
+            this.button_insert.UseVisualStyleBackColor = false;
             this.button_insert.Click += new System.EventHandler(this.Button_insert_Click);
             // 
             // textBox_surname
@@ -271,152 +282,61 @@
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.Gold;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.surnameDataGridViewTextBoxColumn,
-            this.estimateDataGridViewTextBoxColumn,
-            this.BAL,
-            this.KSQ1,
-            this.KSQ2,
-            this.KSQ3,
-            this.KSQ4,
-            this.BKSQ});
-            this.dataGridView1.DataSource = this.schoolBindingSource3;
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10});
+            this.dataGridView1.DataSource = this.schoolBindingSource6;
+            this.dataGridView1.GridColor = System.Drawing.Color.Black;
             this.dataGridView1.Location = new System.Drawing.Point(12, 298);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(838, 265);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
-            // iDDataGridViewTextBoxColumn
+            // schoolBindingSource6
             // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.FillWeight = 40F;
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDDataGridViewTextBoxColumn.Width = 30;
+            this.schoolBindingSource6.DataMember = "School";
+            this.schoolBindingSource6.DataSource = this.testDataSet1;
             // 
-            // nameDataGridViewTextBoxColumn
+            // testDataSet1
             // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.testDataSet1.DataSetName = "TestDataSet";
+            this.testDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // surnameDataGridViewTextBoxColumn
+            // schoolBindingSource5
             // 
-            this.surnameDataGridViewTextBoxColumn.DataPropertyName = "Surname";
-            this.surnameDataGridViewTextBoxColumn.HeaderText = "Surname";
-            this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
-            this.surnameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // estimateDataGridViewTextBoxColumn
-            // 
-            this.estimateDataGridViewTextBoxColumn.DataPropertyName = "Estimate";
-            this.estimateDataGridViewTextBoxColumn.HeaderText = "Estimate";
-            this.estimateDataGridViewTextBoxColumn.Name = "estimateDataGridViewTextBoxColumn";
-            this.estimateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.estimateDataGridViewTextBoxColumn.Width = 60;
-            // 
-            // BAL
-            // 
-            this.BAL.DataPropertyName = "BAL";
-            this.BAL.HeaderText = "BAL";
-            this.BAL.Name = "BAL";
-            this.BAL.ReadOnly = true;
-            this.BAL.Width = 50;
-            // 
-            // KSQ1
-            // 
-            this.KSQ1.DataPropertyName = "KSQ1";
-            this.KSQ1.HeaderText = "KSQ1";
-            this.KSQ1.Name = "KSQ1";
-            this.KSQ1.ReadOnly = true;
-            this.KSQ1.Width = 40;
-            // 
-            // KSQ2
-            // 
-            this.KSQ2.DataPropertyName = "KSQ2";
-            this.KSQ2.HeaderText = "KSQ2";
-            this.KSQ2.Name = "KSQ2";
-            this.KSQ2.ReadOnly = true;
-            this.KSQ2.Width = 40;
-            // 
-            // KSQ3
-            // 
-            this.KSQ3.DataPropertyName = "KSQ3";
-            this.KSQ3.HeaderText = "KSQ3";
-            this.KSQ3.Name = "KSQ3";
-            this.KSQ3.ReadOnly = true;
-            this.KSQ3.Width = 40;
-            // 
-            // KSQ4
-            // 
-            this.KSQ4.DataPropertyName = "KSQ4";
-            this.KSQ4.HeaderText = "KSQ4";
-            this.KSQ4.Name = "KSQ4";
-            this.KSQ4.ReadOnly = true;
-            this.KSQ4.Width = 40;
-            // 
-            // BKSQ
-            // 
-            this.BKSQ.DataPropertyName = "BKSQ";
-            this.BKSQ.HeaderText = "BKSQ";
-            this.BKSQ.Name = "BKSQ";
-            this.BKSQ.ReadOnly = true;
-            this.BKSQ.Width = 40;
-            // 
-            // schoolBindingSource3
-            // 
-            this.schoolBindingSource3.DataMember = "School";
-            this.schoolBindingSource3.DataSource = this.testDataSetBindingSource;
-            // 
-            // testDataSetBindingSource
-            // 
-            this.testDataSetBindingSource.DataSource = this.testDataSet;
-            this.testDataSetBindingSource.Position = 0;
+            this.schoolBindingSource5.DataMember = "School";
+            this.schoolBindingSource5.DataSource = this.testDataSet;
             // 
             // testDataSet
             // 
             this.testDataSet.DataSetName = "TestDataSet";
             this.testDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // schoolBindingSource1
+            // schoolBindingSource4
             // 
-            this.schoolBindingSource1.DataMember = "School";
-            this.schoolBindingSource1.DataSource = this.testDataSet3;
+            this.schoolBindingSource4.DataMember = "School";
             // 
-            // testDataSet3
+            // schoolBindingSource3
             // 
-            this.testDataSet3.DataSetName = "TestDataSet3";
-            this.testDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // schoolBindingSource
-            // 
-            this.schoolBindingSource.DataMember = "School";
-            this.schoolBindingSource.DataSource = this.testDataSet1;
-            // 
-            // testDataSet1
-            // 
-            this.testDataSet1.DataSetName = "TestDataSet1";
-            this.testDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // schoolTableAdapter
-            // 
-            this.schoolTableAdapter.ClearBeforeFill = true;
-            // 
-            // schoolTableAdapter1
-            // 
-            this.schoolTableAdapter1.ClearBeforeFill = true;
+            this.schoolBindingSource3.DataSource = this.testDataSetBindingSource;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::TURK_SQL.Properties.Resources.SilverPlushAmericanriverotter_max_1mb;
+            this.pictureBox1.Image = global::Summativ_SQL.Properties.Resources.SilverPlushAmericanriverotter_max_1mb;
             this.pictureBox1.Location = new System.Drawing.Point(553, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(309, 289);
@@ -425,37 +345,142 @@
             // 
             // schoolBindingSource2
             // 
-            this.schoolBindingSource2.DataMember = "School";
             this.schoolBindingSource2.DataSource = this.testDataSetBindingSource;
             // 
-            // schoolTableAdapter2
+            // button_Calculator
             // 
-            this.schoolTableAdapter2.ClearBeforeFill = true;
+            this.button_Calculator.Location = new System.Drawing.Point(563, 55);
+            this.button_Calculator.Name = "button_Calculator";
+            this.button_Calculator.Size = new System.Drawing.Size(63, 23);
+            this.button_Calculator.TabIndex = 19;
+            this.button_Calculator.Text = "Calculator";
+            this.button_Calculator.UseVisualStyleBackColor = true;
+            this.button_Calculator.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(557, 21);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(281, 31);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "More Calculation???";
+            // 
+            // schoolTableAdapter
+            // 
+            this.schoolTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Surname";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Surname";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Estimate";
+            this.dataGridViewTextBoxColumn4.FillWeight = 60F;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Estimate";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 60;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "BAL";
+            this.dataGridViewTextBoxColumn5.HeaderText = "BAL";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 60;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "KSQ1";
+            this.dataGridViewTextBoxColumn6.HeaderText = "KSQ1";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 60;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "KSQ2";
+            this.dataGridViewTextBoxColumn7.HeaderText = "KSQ2";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 60;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "KSQ3";
+            this.dataGridViewTextBoxColumn8.HeaderText = "KSQ3";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Width = 60;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "KSQ4";
+            this.dataGridViewTextBoxColumn9.HeaderText = "KSQ4";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.Width = 60;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "BKSQ";
+            this.dataGridViewTextBoxColumn10.HeaderText = "BKSQ";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.Width = 60;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(862, 575);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.button_Calculator);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Summativ";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.schoolBindingSource6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.schoolBindingSource5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.schoolBindingSource4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.schoolBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.schoolBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testDataSet3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.schoolBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.schoolBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.schoolBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.schoolBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -470,9 +495,7 @@
         private System.Windows.Forms.TextBox textBox_surname;
         private System.Windows.Forms.TextBox textBox_name;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private TestDataSet1 testDataSet1;
         private System.Windows.Forms.BindingSource schoolBindingSource;
-        private TestDataSet1TableAdapters.SchoolTableAdapter schoolTableAdapter;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox_ksq4;
         private System.Windows.Forms.Label label6;
@@ -481,28 +504,44 @@
         private System.Windows.Forms.TextBox textBox_ksq2;
         private System.Windows.Forms.TextBox textBox_ksq1;
         private System.Windows.Forms.Label label4;
-        private TestDataSet testDataSet;
         private System.Windows.Forms.BindingSource testDataSetBindingSource;
-        private TestDataSet3 testDataSet3;
         private System.Windows.Forms.BindingSource schoolBindingSource1;
-        private TestDataSet3TableAdapters.SchoolTableAdapter schoolTableAdapter1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox_bksq;
         private System.Windows.Forms.Button button_reset;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.BindingSource schoolBindingSource2;
+        private System.Windows.Forms.BindingSource schoolBindingSource3;
+        private System.Windows.Forms.Button button_Calculator;
+        private System.Windows.Forms.Label label3;
+      //  private Summativ_SQL.TestDataSet testDataSet;
+        private System.Windows.Forms.BindingSource schoolBindingSource4;
+   // private Summativ_SQL.TestDataSetTableAdapters.TestTableAdapter schoolTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn estimateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BAL;
-        private System.Windows.Forms.DataGridViewTextBoxColumn KSQ1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn KSQ2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn KSQ3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn KSQ4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BKSQ;
-        private System.Windows.Forms.BindingSource schoolBindingSource2;
-        private TestDataSetTableAdapters.SchoolTableAdapter schoolTableAdapter2;
-        private System.Windows.Forms.BindingSource schoolBindingSource3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bALDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kSQ1DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kSQ2DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kSQ3DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kSQ4DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bKSQDataGridViewTextBoxColumn;
+        private Summativ_SQL.TestDataSet testDataSet;
+        private System.Windows.Forms.BindingSource schoolBindingSource5;
+        private Summativ_SQL.TestDataSetTableAdapters.SchoolTableAdapter schoolTableAdapter;
+        private Summativ_SQL.TestDataSet testDataSet1;
+        private System.Windows.Forms.BindingSource schoolBindingSource6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
     }
 }
 

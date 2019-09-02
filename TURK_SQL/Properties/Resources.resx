@@ -118,28 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="pexels-photo-949587" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pexels-photo-949587.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="SilverPlushAmericanriverotter-max-1mb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SilverPlushAmericanriverotter-max-1mb.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Self-Study_Final-263x250" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Self-Study_Final-263x250.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="giphy" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\giphy.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="study-icon-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\study-icon-2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="kisspng-blackboard-desktop-wallpaper-presentation-classroo-teacher-5ad5d5eac111a7.3333765315239633707908" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\kisspng-blackboard-desktop-wallpaper-presentation-classroo-teacher-5ad5d5eac111a7.3333765315239633707908.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SilverPlushAmericanriverotter-max-1mb" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SilverPlushAmericanriverotter-max-1mb.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="0IHvjO" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\0IHvjO.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="board_black_line_texture_background_wood_55220_2560x1600" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\board_black_line_texture_background_wood_55220_2560x1600.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="analytics" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\analytics.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

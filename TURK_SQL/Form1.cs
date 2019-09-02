@@ -2,12 +2,17 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace TURK_SQL
 {
-    public partial class Form1 : Form
+    public partial class Form1 : Form 
     {
-        SqlConnection baglanti = new SqlConnection("Data Source=AUTO-TAHIR\\NETX_SERVER_SQL;Initial Catalog=Test;Integrated Security=True");
+        //SqlConnection baglanti = new SqlConnection("Data Source=AUTO-TAHIR\\NETX_SERVER_SQL;Initial Catalog=Test;Integrated Security=True");
+        // SqlConnection baglanti = new SqlConnection(@"Data Source=(LocalDB)\v11.0;Integrated Security=True;AttachDBFileName='|DataDirectory|\Test.mdf'");
+
+        SqlConnection baglanti = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Test.mdf;Integrated Security=True");
+        //Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\user1\source\repos\TURK_SQL\TURK_SQL\Database1.mdf;Integrated Security=True
 
         public Form1()
         {
@@ -22,7 +27,6 @@ namespace TURK_SQL
             {
 
                 MessageBox.Show("Melumatlari daxil edin");
-
 
                 return;
 
@@ -358,7 +362,7 @@ namespace TURK_SQL
                 float c = float.Parse(textBox_ksq3.Text);
                 float d = float.Parse(textBox_ksq4.Text);
                 int z = 0;
-                if (a >= 101 || b >= 101 || c >= 101 || d >= 100 || float.Parse(textBox_bksq.Text) >= 100)
+                if (a >= 101 || b >= 101 || c >= 101 || d >= 101 || float.Parse(textBox_bksq.Text) >= 101)
                 {
                     MessageBox.Show("Daxil edilen reqem 100 den coxdur");
                     return;
@@ -438,6 +442,7 @@ namespace TURK_SQL
                 dataGridView1.Columns[0].Visible = false;
                 baglanti.Close();
 
+
             }
 
 
@@ -449,12 +454,18 @@ namespace TURK_SQL
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'testDataSet.School' table. You can move, or remove it, as needed.
-            this.schoolTableAdapter2.Fill(this.testDataSet.School);
-            // TODO: This line of code loads data into the 'testDataSet3.School' table. You can move, or remove it, as needed.
-            this.schoolTableAdapter1.Fill(this.testDataSet3.School);
             // TODO: This line of code loads data into the 'testDataSet1.School' table. You can move, or remove it, as needed.
             this.schoolTableAdapter.Fill(this.testDataSet1.School);
+            // TODO: This line of code loads data into the 'testDataSet.School' table. You can move, or remove it, as needed.
+            this.schoolTableAdapter.Fill(this.testDataSet.School);
+            // TODO: This line of code loads data into the 'testDataSet.School' table. You can move, or remove it, as needed.
+            //  this.schoolTableAdapter.Fill(this.testDataSet.School);
+            // TODO: This line of code loads data into the 'testDataSet.School' table. You can move, or remove it, as needed.
+
+            // TODO: This line of code loads data into the 'testDataSet3.School' table. You can move, or remove it, as needed.
+
+            // TODO: This line of code loads data into the 'testDataSet1.School' table. You can move, or remove it, as needed.
+
 
         }
 
@@ -578,7 +589,14 @@ namespace TURK_SQL
             textBox_bksq.Clear();
         }
 
-        private void PictureBox1_Click(object sender, EventArgs e)
+       
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            Process.Start(@"C:\Users\user1\source\repos\TURK_SQL\Study.exe");
+        }
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
